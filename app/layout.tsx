@@ -3,6 +3,8 @@ import { Nunito} from "next/font/google";
 import "./globals.css";
 import NavBar from "./components/Navbar";
 import Modal from "./components/modals/Modals";
+import RegisterModal from "./components/modals/RegisterModal";
+import { ToasterProvider } from "./providers/ToasterProvider";
 
 
 export const metadata: Metadata = {
@@ -22,7 +24,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={font.className}>
-        <Modal title="hello world" isOpen={true}/>
+        <ToasterProvider/>
+        <RegisterModal/>
         <NavBar/>
         {children}</body>
     </html>
