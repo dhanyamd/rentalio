@@ -65,10 +65,10 @@ const Modal : React.FC<ModalProps> = ({
     <div className="relative w-full md:w-4/6 lg:w-3/6 xl:w-2/5 my-6 mx-auto h-svh lg:h-auto md:h-auto">
      {/* content */} 
     <div  className={`translate duration-300 h-full 
-    ${showmodal ? 'translate-y-0' : 'translate-y-full'}
+    ${showmodal ? 'translate-y-0' : 'translate-y-full'}  
     ${showmodal? 'opacity-100' : 'opacity-0'}
         `}>
-            <div className="transalte h-ful lg:h-auto md:h-auto
+            <div className="translate h-full lg:h-auto md:h-auto
              border-0 rounded-lg shadow-lg relative flex flex-col outline-none focus:outline-none bg-white w-full">
                 { /* Header */}
             <div className="flex items-center justify-center p-6 rounded-t relative border-b-[1px]">
@@ -86,7 +86,7 @@ const Modal : React.FC<ModalProps> = ({
             {/** Footer */}
             <div className="flex flex-col gap-2 p-6">
                 <div className="flex flex-row gap-4 items-center w-full">
-                    
+                                
             {secondaryAction && secondaryActionLabel && (
                 <Button
                 outline
