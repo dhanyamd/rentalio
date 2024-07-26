@@ -1,6 +1,6 @@
 'use client'
 import axios from 'axios'
-import { useState } from 'react'
+import { useCallback, useState } from 'react'
 import { AiFillGithub } from 'react-icons/ai'
 import { FcGoogle } from 'react-icons/fc'
 import {
@@ -15,10 +15,12 @@ import Input from '../input/Input'
 import toast from 'react-hot-toast'
 import Button from './Button'
 import { signIn } from 'next-auth/react'
+import useLoginModal from '@/app/hooks/UseLogin'
 
 const RegisterModal = () => {
     const[loading, setIsLoading] = useState(false);
-    const registerModal = useRegisterModal()
+    const registerModal = useRegisterModal();
+    const LoginModal = useLoginModal()
    
     const {
         register, 
@@ -46,6 +48,12 @@ const RegisterModal = () => {
             setIsLoading(false)
          })
     } 
+
+    
+    const toggle = useCallback(()=> {
+        registerModal.onClose();
+        LoginModal.onOpen();
+    },[LoginModal, registerModal])
 
     
     const bodyContent = (
@@ -92,7 +100,7 @@ const RegisterModal = () => {
                     <div>
                         Already have an account?
                     </div>
-                    <div onClick={registerModal.onClose} className='text-neutral-800 cursor-pointer hover:underline'>
+                    <div onClick={toggle} className='text-neutral-800 cursor-pointer hover:underline'>
                         Login
                     </div>
                 </div>
