@@ -7,11 +7,12 @@ import Heading from "../Heading";
 import { categories } from "../Categories";
 import CategoryInput from "../input/CategoryInput";
 import { FieldValues, useForm } from "react-hook-form";
+import CountrySelect from "../CountrySelect";
 
 enum STEPS{
     CATEGORY = 0,
     LOCATION = 1,
-    INFOR = 2,
+    INFO = 2,
     IMAGES = 3,
     DESCRIPTION = 4,
     PRICE = 5
@@ -77,6 +78,7 @@ const RentModal = () => {
       return 'Back'
     },[step])
 
+
     let BodyContent = (
         <div className="flex flex-col gap-8">
          <Heading
@@ -98,6 +100,20 @@ const RentModal = () => {
         </div>
     )
 
+    if(step === STEPS.LOCATION){
+        BodyContent = (
+            <div className="flex flex-col gap-8">
+                <Heading title="Where is your place located?"
+                subtitle="Help guests find you!"/>
+                Location Step!
+                <CountrySelect 
+                
+                onChange={(value) => setcustomSetValue('location', value)}
+                />
+            </div>
+        )
+    }
+
     return (
        <Modal
         isOpen={rentModal.isOpen}
@@ -105,7 +121,7 @@ const RentModal = () => {
         secondaryActionLabel={secondaryActionLabel}
         secondaryAction={step === STEPS.CATEGORY ? undefined : onBack}
         onClose={rentModal.onClose}
-        onSubmit={rentModal.onClose}
+        onSubmit={onNext}
         actionLabel={actionLabel}
         body={BodyContent}
         />
