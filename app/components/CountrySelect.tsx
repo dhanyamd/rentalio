@@ -1,6 +1,5 @@
 'use client'
 
-import countries from "world-countries";
 import useCountries from "../hooks/UseCountries"
 import Select from "react-select"
 
