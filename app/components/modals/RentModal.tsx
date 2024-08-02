@@ -60,6 +60,7 @@ const RentModal = () => {
     const roomCount = watch('roomCount');
     const bathroomCount = watch('bathroomCount');
     const imageSrc = watch('imageSrc');
+    
 
     const Map = useMemo(()=>dynamic(()=>import('../Map'),{
         ssr: false
@@ -207,7 +208,7 @@ const RentModal = () => {
             subtitle="short and sweet works best!"
             />
             <Input 
-            id="Title"
+            id="title"
             label="Title"
             disabled={isLoading}
             required
@@ -216,7 +217,7 @@ const RentModal = () => {
             />
             <hr/>
             <Input 
-            id="Description"
+            id="description"
             label="Description"
             disabled={isLoading}
             required
@@ -246,6 +247,7 @@ const RentModal = () => {
             </div>
         )
     }
+   
     return (
        <Modal
         isOpen={rentModal.isOpen}
