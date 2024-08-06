@@ -54,7 +54,7 @@ const RentModal = () => {
         }
     })
 
-    const category = watch('category');
+    const categoryValue = watch('category');
     const location = watch('location');
     const guestCount = watch('guestCount');
     const roomCount = watch('roomCount');
@@ -127,13 +127,13 @@ const RentModal = () => {
          subtitle="Pick a category"
          />
          <div className="grid grid-cols-1 md:grid-cols-2 overflow-y-auto gap-3 max-h-[50vh]">
-           {categories.map((item)=> (
-            <div key={item.label} className="col-span-1">
+           {categories.map((category)=> (
+            <div key={category.label} className="col-span-1">
                 <CategoryInput 
-                onClick={(category)=>setcustomSetValue('category', category)}
-                selected={category === item.label}
-                label={item.label}
-                icon={item.icon}
+                onClick={(value)=>setcustomSetValue("category", value)}
+                selected={categoryValue === category.label}
+                label={category.label}
+                icon={category.icon}
                 />
                 </div>
            ))}

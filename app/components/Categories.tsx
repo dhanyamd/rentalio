@@ -91,7 +91,7 @@ export const categories = [
 
 const Categories = () => {
     const params = useSearchParams();
-    const category = params?.get('category');
+    const categoryName = params?.get("category");
     const pathname = usePathname();
     
     const isMainPage = pathname === '/'
@@ -103,10 +103,10 @@ const Categories = () => {
         <Container>
             <div className="pt-4 flex flex-row justify-between items-center overflow-x-auto">
                 {categories.map((item)=> (
-                    <CategoryBox
+                    <CategoryBox                   
                     key={item.label}
                     label={item.label}
-                    selected={category === item.label}
+                    selected={categoryName === item.label}
                     icon={item.icon}
                     />
                 ))}
