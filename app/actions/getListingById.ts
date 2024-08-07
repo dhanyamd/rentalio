@@ -19,7 +19,7 @@ export default async function getListingsById(
         }
     })
     if(!listing){
-        return null
+        return null 
     }
 
     return {
