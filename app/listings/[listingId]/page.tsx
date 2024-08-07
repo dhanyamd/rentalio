@@ -19,7 +19,7 @@ const ListingPage = async({params} : {params : IParams}) => {
 
     return (
         <ListingClient   
-        //@ts-ignore   
+        //@ts-ignore
         listing = {listing}
         currentUser={currentUser}/>
     )

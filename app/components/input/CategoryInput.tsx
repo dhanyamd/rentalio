@@ -22,7 +22,7 @@ const CategoryInput : React.FC<CategoryInputProps> = ({
             ${selected ? 'border-black' : 'border-neutral-200'}
             `}
          >
-            <Icon size={30} />
+            <Icon size={40} />
             <div className="font-semibold">
                  {label}
             </div>

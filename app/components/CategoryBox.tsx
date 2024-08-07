@@ -32,7 +32,7 @@ const CategoryBox : React.FC<CategoryProps> = ({
            category: label
         }
 
-        if(params?.get('category') === label){
+        if(params?.get("category") === label){
             delete updatedQuery.category
         }
 

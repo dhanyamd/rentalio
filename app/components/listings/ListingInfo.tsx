@@ -1,7 +1,7 @@
 'use client'
 
 import useCountries from "@/app/hooks/UseCountries"
-import { safeListing, SafeUser } from "@/app/types"
+import { SafeUser } from "@/app/types"
 import { IconType } from "react-icons"
 import Avatar from "../Avatar"
 import ListingCategory from "./ListingCategory"
@@ -14,11 +14,13 @@ const Map = dynamic(() => import('../Map'), {
 
 interface ListingInfoProps {
     user: SafeUser;
-    category : {
-      icon: IconType;
-      label: string;
-      description: string;
-    };
+    category:
+    | {
+        icon: IconType;
+        label: string;
+        description: string;
+      }
+    | undefined;
     bathroomCount: number;
     guestCount: number;
     roomCount: number;
@@ -62,6 +64,7 @@ const ListingInfo : React.FC<ListingInfoProps> = ({
                     label={category.label}
                     description={category.description} 
                       />
+                    
             )}
             <hr/>
              <div className="text-lg font-light text-neutral-500">
