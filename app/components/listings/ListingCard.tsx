@@ -1,17 +1,16 @@
 'use client'
 import useCountries from "@/app/hooks/UseCountries"
-import { safeListing, SafeUser } from "@/app/types"
-import { Listing, Reservation } from "@prisma/client"
+import { safeListing, safeReservations, SafeUser } from "@/app/types"
 import Image from "next/image"
 import { useRouter } from "next/navigation"
-import { format } from "path"
+import { format } from "date-fns"
 import React, { useCallback, useMemo } from "react"
 import HeartButton from "../HeartButton"
 import Button from "../modals/Button"
 
 interface ListingCardProps{
     data : safeListing
-    reservation? : Reservation
+    reservation? : safeReservations
     onAction? : (id : string) => void
     disabled? : boolean
     actionLabel? : string
@@ -24,7 +23,7 @@ const ListingCard : React.FC<ListingCardProps> = ({
     reservation,
     onAction,
     disabled,
-    actionId = '',
+    actionId = "",
     actionLabel,
     currentUser
 }) => {
@@ -50,14 +49,13 @@ const ListingCard : React.FC<ListingCardProps> = ({
    },[reservation, data.price])
 
    const reservationDate = useMemo(() => {
-     if(!reservation){
-        return null
-     }
-     const start = new Date(reservation.startDate)
-     const end = new Date(reservation.endDate)
-    //@ts-ignore
-     return `${format(start, 'PP')} - ${format(end, 'PP')}`
-   },[reservation])
+    if (!reservation) return null;
+    const start = new Date(reservation.startDate);
+    const end = new Date(reservation.endDate);
+
+    return `${format(start, 'PP')} - ${format(end, 'PP')}`;
+  }, [reservation]);
+
 
     return (
         <div
