@@ -34,7 +34,7 @@ const Modal : React.FC<ModalProps> = ({
        setshowmodal(isOpen)
     },[isOpen])
 
-    const handleClose = useCallback(()=> {
+    const handleClose = useCallback(() => {
      if(disabled) return 
 
      setshowmodal(false)
@@ -58,7 +58,7 @@ const Modal : React.FC<ModalProps> = ({
     if(!isOpen){
         return null
     }
-
+    //if isOpen is true then the modal would appaer by setshowmodal 
     return (
      <>
      <div className="justify-center items-center overflow-x-hidden overflow-y-auto flex fixed inset-0 z-50 outline-none focus:outline-none bg-neutral-100/70 ">

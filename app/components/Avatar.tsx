@@ -1,8 +1,7 @@
 'use client'
 
 import Image from "next/image"
-import LoginModal from "./modals/LoginModal"
-import useLoginModal from "../hooks/UseLogin"
+
 
 interface AvatarProps{
     src? : string | null | undefined
