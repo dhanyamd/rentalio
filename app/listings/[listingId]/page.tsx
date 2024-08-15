@@ -18,14 +18,9 @@ const ListingPage = async({params} : {params : IParams}) => {
             </EmptyState>
         )
     }
+    //@ts-ignore
+    return <ListingClient listing={listing} reservations={reservations} currentUser={currentUser} />;
 
-    return (
-        <ListingClient   
-        reservations={reservations}
-        //@ts-ignore
-        listing = {listing}
-        currentUser={currentUser}/>
-    )
 }
 
 export default ListingPage
