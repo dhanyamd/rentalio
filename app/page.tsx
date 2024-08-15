@@ -1,6 +1,7 @@
+'use client'
 import { Suspense } from "react";
 import getCurrentUser from "./actions/getCurrentUser";
-import getListings, { IListingParams } from "./actions/getListings";
+import getListings, { IListingsParams } from "./actions/getListings";
 import ClientOnly from "./components/ClientOnly";
 import Container from "./components/Container";
 import EmptyState from "./components/EmptyState";
@@ -11,7 +12,7 @@ import { ISearchListingParams, safeListing } from "./types";
 export const dynamic = 'force-dynamic';
 
 interface HomeProps {
-  searchParams: IListingParams;
+  searchParams: IListingsParams;
 }
 
 const Home = async ({ searchParams }: HomeProps) => {
