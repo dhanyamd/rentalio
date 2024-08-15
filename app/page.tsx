@@ -1,4 +1,3 @@
-'use client'
 import { Suspense } from "react";
 import getCurrentUser from "./actions/getCurrentUser";
 import getListings from "./actions/getListings";
