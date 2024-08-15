@@ -26,3 +26,14 @@ export type SafeUser = Omit<
     updatedAt : string,
     emailVerified : string | null
 }
+
+export interface ISearchListingParams {
+  userId?: string;
+  guestCount?: number;
+  roomCount?: number;
+  bathroomCount?: number;
+  startDate?: string;
+  endDate?: string;
+  locationValue?: string;
+  category?: string;
+}

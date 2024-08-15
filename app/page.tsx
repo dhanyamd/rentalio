@@ -1,14 +1,14 @@
-'use client'
+
 import getCurrentUser from "./actions/getCurrentUser";
 import getListings, { IListingParams } from "./actions/getListings";
 import ClientOnly from "./components/ClientOnly";
 import Container from "./components/Container";
 import EmptyState from "./components/EmptyState";
 import ListingCard from "./components/listings/ListingCard";
-import { safeListing } from "./types";
+import { ISearchListingParams } from "./types";
 
 interface IHomeProps {
-  searchParams: IListingParams;
+  searchParams: ISearchListingParams;
 }
 
 export default async function Home({ searchParams }: IHomeProps) {
