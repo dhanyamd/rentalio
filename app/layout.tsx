@@ -9,6 +9,7 @@ import LoginModal from "./components/modals/LoginModal";
 import getCurrentUser from "./actions/getCurrentUser";
 import RentModal from "./components/modals/RentModal";
 import SearchModal from "./components/modals/SearchModal";
+import { Suspense } from "react";
 
 
 export const metadata: Metadata = {
@@ -29,6 +30,7 @@ export default async function RootLayout({
   return (
     <html lang="en">
       <body className={font.className}>
+        <Suspense>
         <ToasterProvider/>
         <SearchModal />
         <RentModal/>
@@ -38,6 +40,7 @@ export default async function RootLayout({
          <div className="pb-20 pt-28">
          {children}
          </div>
+         </Suspense>
         </body>
     </html>
   );
