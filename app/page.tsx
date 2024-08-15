@@ -1,4 +1,4 @@
-'use client'
+
 import { Suspense } from "react";
 import getCurrentUser from "./actions/getCurrentUser";
 import getListings, { IListingsParams } from "./actions/getListings";
