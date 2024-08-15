@@ -39,7 +39,6 @@ const UserMenu : React.FC<UserMenuProps> = ({
 
     return (
         <div 
-        onClick={()=> {}}
         className="relative">
             <div className="flex flex-row items-center gap-3">
                 <div onClick={onRent}
