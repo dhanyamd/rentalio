@@ -48,7 +48,7 @@ const UserMenu : React.FC<UserMenuProps> = ({
                 <div onClick={toggleOpen}
                     className="p-4 md:py-1 md:px-2 cursor-pointer border-[1px] flex flex-row items-center gap-3 hover:shadow-md transition border-neutral-100 rounded-full"
                     >
-                     <AiOutlineMenu onClick={toggleOpen}/>
+                     <AiOutlineMenu />
                      <div className="hidden md:block">
                       <Avatar src={currentUser?.image}/>   
                      </div>
