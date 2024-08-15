@@ -7,15 +7,23 @@ import EmptyState from "./components/EmptyState";
 import ListingCard from "./components/listings/ListingCard";
 import { ISearchListingParams } from "./types";
 
-interface IHomeProps {
+
+export const dynamic = 'force-dynamic';
+
+interface HomeProps {
   searchParams: ISearchListingParams;
 }
 
-export default async function Home({ searchParams }: IHomeProps) {
-  const [listings, currentUser] = await Promise.all([
-    getListings(searchParams),
-    getCurrentUser(),
-  ]);
+const Home = async ({ searchParams }: HomeProps) => {
+  const listings = await getListings(searchParams);
+  const currentUser = await getCurrentUser();
+
+  const isEmpty = listings.length === 0;
+
+  if (isEmpty) {
+    return <EmptyState showResets />;
+  }
+
 
   if (listings.length === 0) {
     return (
@@ -45,3 +53,5 @@ export default async function Home({ searchParams }: IHomeProps) {
     </ClientOnly>
   );
 }
+
+export default Home
