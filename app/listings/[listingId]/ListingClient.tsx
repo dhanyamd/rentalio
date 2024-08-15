@@ -102,7 +102,6 @@ const ListingClient: React.FC<ListingClientProps> = ({
 
   }, [listing.category, categories]);
 
-  console.log(category) 
 
   return (
     <Container>

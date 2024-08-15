@@ -9,6 +9,7 @@ import { usePathname, useSearchParams } from "next/navigation"
 import { FaSkiing } from "react-icons/fa"
 import { BsSnow } from "react-icons/bs"
 import { IoDiamond } from "react-icons/io5"
+import { Suspense } from "react"
 
 export const categories = [
     {
@@ -100,6 +101,7 @@ const Categories = () => {
     }
 
     return (
+        <Suspense>
         <Container>
             <div className="pt-4 flex flex-row justify-between items-center overflow-x-auto">
                 {categories.map((item)=> (
@@ -112,6 +114,7 @@ const Categories = () => {
                 ))}
             </div>
         </Container>
+        </Suspense>
        
     )
 }

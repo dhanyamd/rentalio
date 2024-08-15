@@ -1,4 +1,4 @@
-
+'use server'
 interface IParams {
     listingId?: string,
     userId?: string,
