@@ -19,9 +19,10 @@ const useFavorite = ({listingId, currentUser} : IUseFavorite) => {
       const list =  currentUser?.favouriteIds || []
 
      return list.includes(listingId!)
+
   },[currentUser, listingId])
 
-  const toggleFavourite = useCallback(async(e : React.MouseEvent<HTMLDivElement>) => {
+    const toggleFavourite = useCallback(async(e : React.MouseEvent<HTMLDivElement>) => {
      e.stopPropagation();
 
      if(!currentUser){

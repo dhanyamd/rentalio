@@ -16,7 +16,7 @@ const HeartButton : React.FC<HearButtonProps> = ({
     
     const {toggleFavourite, hasFavourited} = useFavorite({
         listingId,
-        currentUser
+        currentUser 
     })
 
     return (

@@ -5,10 +5,9 @@ import ListingHead from "@/app/components/listings/ListingHead";
 import ListingInfo from "@/app/components/listings/ListingInfo";
 import useLoginModal from "@/app/hooks/UseLogin";
 import { safeListing, safeReservations, SafeUser } from "@/app/types"
-import { Listing, Reservation, User } from "@prisma/client"
 import { useRouter } from "next/navigation";
-import { SetStateAction, useCallback, useEffect, useMemo, useState } from "react";
-import { differenceInCalendarDays, differenceInDays, eachDayOfInterval, setDate } from "date-fns"
+import { useCallback, useEffect, useMemo, useState } from "react";
+import { differenceInCalendarDays, eachDayOfInterval } from "date-fns"
 import axios from "axios";
 import toast from "react-hot-toast";
 import ListingReservation from "@/app/components/listings/ListingReservation";

@@ -251,7 +251,7 @@ const RentModal = () => {
     return (
        <Modal
         isOpen={rentModal.isOpen}
-        title="Airbnb your home!"
+        title="Rentalio your home!"
         secondaryActionLabel={secondaryActionLabel}
         secondaryAction={step === STEPS.CATEGORY ? undefined : onBack}
         onClose={rentModal.onClose}
