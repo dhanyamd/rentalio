@@ -102,7 +102,7 @@ const ListingClient: React.FC<ListingClientProps> = ({
 
   }, [listing.category, categories]);
 
-
+//need to check if this works on deployment
   return (
     <Container>
       <div className="max-w-screen-lg mx-auto">
