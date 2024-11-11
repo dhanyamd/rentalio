@@ -1,3 +1,5 @@
+Rentalio is a application similar to airbnb to rent houses and homestays
+
 HOME PAGE
 
 ![rentalio](https://github.com/user-attachments/assets/54d0bb09-004e-4ead-975f-a04d7fd7379a)
